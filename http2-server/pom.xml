@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.timmy80</groupId>
+	<artifactId>mia-http2-sample</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<name>http2</name>
+	<description>A custom HTTP/2 server based on Netty and MiA Core.</description>
+	<url>https://github.com/Timmy80/mia-samples</url>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Anthony THOMAS</name>
+			<email>anthony.800@live.fr</email>
+			<organization>overware-fr</organization>
+			<organizationUrl>https://github.com/overware-fr</organizationUrl>
+		</developer>
+	</developers>
+
+	<properties>
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.github.timmy80</groupId>
+			<artifactId>mia-core</artifactId>
+			<version>1.0.0-alpha2</version>
+		</dependency>
+		<!-- for SelfSignedCertificate. -->
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk18on</artifactId>
+			<version>1.72</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcpkix-jdk18on</artifactId>
+			<version>1.72</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>com.github.timmy80.mia.samples.http2.Http2ServerBootstrap</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
